@@ -124,7 +124,7 @@ def createQR(text, qr_file):
 # Execute shell command
 def gpgCommand(text):
     # Execute gpg command
-    command = "echo '" + encryptMorse(text) + "' | gpg --s2k-mode 3 --s2k-count 65011712 --s2k-digest-algo sha512 --cipher-algo AES256 --symmetric --armor > encrypted.txt"
+    command = "echo '" + text + "' | gpg --s2k-mode 3 --s2k-count 65011712 --s2k-digest-algo sha512 --cipher-algo AES256 --symmetric --armor > encrypted.txt"
     #print("Executing command: " + command)
     os.system(command)
 
